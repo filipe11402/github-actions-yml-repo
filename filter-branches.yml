@@ -1,0 +1,18 @@
+name: "Filter Branch names"
+
+on:
+  push:
+    branches:
+      - 'master'
+      - 'develop'
+      # any branch that starts with feature/...
+      - 'feature/**'
+      # specific name branches
+      - 'feature/my-new-feature'
+      # branch that starts with bugfix/ and endswith -my-fix
+      - bugfix/**-my-fix
+  pull_request:
+    # exclude branches
+    branches-ignore:
+      # ignores this branch
+      - 'hotfix/this-fix'

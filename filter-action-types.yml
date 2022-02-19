@@ -1,0 +1,23 @@
+name: "Filter Action Type That Triggers Workflow"
+
+on:
+  pull_request:
+    # when a pull request is opened or closed
+    [ opened, closed ]
+
+  push:
+    # when a basic push is made
+    branches:
+      # specific branches that are pushed
+      - master
+      - develop
+
+  discussion:
+    types:
+      - created
+      - edited
+      - deleted
+  fork:
+  issues:
+    # types of issues that will trigger this
+    types: [ opened, closed, edited, assigned ]

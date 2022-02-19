@@ -1,0 +1,6 @@
+name: "Filter Workflow by branch"
+
+on:
+  push:
+    # will happen on any push to master branch or develop
+    branches: [ master, develop ]
