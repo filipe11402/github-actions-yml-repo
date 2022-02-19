@@ -1,0 +1,6 @@
+name: "Publish Library to Private Nuget Library"
+
+on: 
+  push:
+    branches:
+      - 'master'

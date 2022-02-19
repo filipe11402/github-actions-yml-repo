@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: Set .NET Version
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v2
       with:
         dotnet-version: 5.0.x
         
@@ -23,7 +23,7 @@ jobs:
       run: dotnet restore
       
     - name: Build
-      run: dotnet build --configuration Release
+      run: dotnet build
       
     - name: Test
       run: dotnet test

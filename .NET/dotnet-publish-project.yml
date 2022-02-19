@@ -1,0 +1,22 @@
+name: "Publish .NET project"
+
+on: [push]
+
+jobs:
+
+  publish_project:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: "Setup .NET Version"
+      uses: actions/setup-dotnet@v2
+      with:
+        run: dotnet-version 5.0.x
+
+    - name: "Build Project"
+      run: dotnet build
+    
+    - name: "Publish Project"
+      run: dotnet publish --configuration Release

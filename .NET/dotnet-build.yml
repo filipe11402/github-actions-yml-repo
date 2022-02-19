@@ -1,0 +1,24 @@
+name: "Build .NET Project"
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v2
+
+      - name: "Setup .NET Version"
+        uses: actions/setup-dotnet@v2
+        with: 
+          # specify .NET version
+          dotnet-version: 5.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: "Build Project"
+        run: dotnet build
